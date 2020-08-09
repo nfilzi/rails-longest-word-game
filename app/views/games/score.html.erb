@@ -1,0 +1,14 @@
+<h1>Result</h1>
+<ul class="letters-grid">
+  <% @available_letters.each do |letter| %>
+    <% if @attempt.include?(letter) || @attempt.upcase.include?(letter) %>
+      <li class="letter selected"><%= letter %></li>
+    <% else %>
+      <li class="letter"><%= letter %></li>
+    <% end %>
+  <% end %>
+</ul>
+
+<p><%= @message %></p>
+
+<%= link_to 'Play again', new_path %>
